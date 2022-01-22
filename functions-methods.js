@@ -3,14 +3,15 @@
 
 
 /* Opdracht  1 */
-// Schrijf een functie genaamd getEmailDomain, die een emailadres verwacht en de domeinnaam teruggeeft. Een domeinnaam is hetgeen dat na het @ in het adres staat
+// Schrijf een functie genaamd getEmailDomain, die een emailadres verwacht en de domeinnaam teruggeeft.
+// Een domeinnaam is hetgeen dat na het @ in het adres staat
 // ---- Verwachte uitkomsten:
 // getEmailDomain("n.eeken@novi-education.nl") geeft novi-education.nl
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
 function getEmailDomain(emailadres) {
-   const getIndexNumber = emailadres.indexOf('@')
+    const getIndexNumber = emailadres.indexOf('@')
     const domein = emailadres.substring(getIndexNumber + 1)
     return domein;
 }
@@ -28,20 +29,14 @@ console.log(domein3)
 // De functie checkt of het emailadres een novi domein heeft (medewerker),
 // een novi-education domein (student), of extern domein (zoals gmail of outlook)
 
-// ---- Verwachte uitkomsten:
-// typeOfEmail("n.eeken@novi-education.nl") geeft "Student"
-// typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
-// typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
-// typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
-
 function typeOfEmail(emailadres2) {
     const getIndexNumber = emailadres2.indexOf('@')
     const domein = emailadres2.substring(getIndexNumber + 1)
 
-   if (domein === "novi-education.nl") {
+    if (domein === "novi-education.nl") {
         return ("Student")
     } else if (domein === "novi.nl") {
-       return ("Medewerker")
+        return ("Medewerker")
     } else
         return ("Extern")
 }
@@ -55,8 +50,16 @@ console.log(medewerker)
 console.log(extern1)
 console.log(extern2)
 
+// ---- Verwachte uitkomsten:
+// typeOfEmail("n.eeken@novi-education.nl") geeft "Student"
+// typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
+// typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
+// typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
+
+
 /* Opdracht  3 */
-// Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
+// Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is.
+// De functie returned true of false, afhankelijk van de uitkomst.
 // Een emailadres is valide wanneer:
 // * Er een @ in voorkomt
 // * Er géén , in voorkomt
@@ -74,12 +77,12 @@ function checkEmailValidity(emailadres3) {
     const containDot = emailadres3.lastIndexOf('.')
     const checkDot = containDot !==emailadres3.length -1
 
-   if (containMonkeytail && !containKomma && checkDot) {
-       return (true)
-   }
-   else  {
-       return false
-   }
+    if (containMonkeytail && !containKomma && checkDot) {
+        return (true)
+    }
+    else  {
+        return false
+    }
 
 }
 
